@@ -39,11 +39,11 @@ add_label_post(){
 	read brief_description
 	#Doing Everything in Small Caps and removing whitespaces..
 	NOSPACETOPIC=$(echo "$PostTopic"| tr -d ' ')
-	nospacesmallcaps=$(echo $nospacesmallcaps | tr '[:upper:]' '[:lower:]')
+	nospacesmallcaps=$(echo $NOSPACETOPIC | tr '[:upper:]' '[:lower:]')
 	#cp blog_entry.txt blog_entry_test.txt;
 	#creating a new post-HTMLFile..
-	header_file="<!--The HTML File Starts Here-->"
-	echo $header_file >> "$nospacesmallcaps.html"
+	#header_file="<!--The HTML File Starts Here-->"
+	#echo $header_file >> "$nospacesmallcaps.html"
 	#Adding The Date:
 	sed "5i$date_entry" blog_entry.txt > blog_entry_test.txt
 	cp blog_entry_test.txt blog_entry_test2.txt
@@ -57,9 +57,19 @@ add_label_post(){
 	sed "17i$brief_description" blog_entry_test2.txt > blog_entry_test.txt
 	cp blog_entry_test.txt blog_entry_test2.txt
 	#Adding the New Post in Main Blog.HTML.. YOLO!!
-	value=$(<blog_entry_test.txt)
-	sed "22i$value" blog.html > blog2.html
+	
+######SOME ERROR HERE...!!! DUNNO!!! :?
+##Hence Moving TO Awesome Python. YOO.!
+	python3 writepost.py
+	echo -e "Now Moving For The Original Post."
+	#post_entry=$(<blog_entry_test.txt)
+	#post_entry=$(<search.txt)
+	#sed "22i$post_entry" blog.html > blog2.html
+
+###OK after here...	
+
 	cp blog2.html blog.html
+	
 	#Now to write the original Post and stuff..
 	#cp post.html "$nospacesmallcaps.html"
 	cp post.html blog2.html
