@@ -1,5 +1,5 @@
-'''This Is Used Only to add the Entry int the main
-	Blog.HtML file..
+'''This is used only to add the Entry into the main
+	blog.html file..
 '''
 import os
 
