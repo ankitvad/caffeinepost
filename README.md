@@ -8,3 +8,4 @@ used to handle my own private <a href="http://ankitvad.github.io/blog/blog.html"
 Uses the CSS design from: <a href="http://lucumr.pocoo.org/">Armin Ronacher's</a> private site.<br>
 Apart from the site design, everything else is covered by the general:MIT License.<br>
 PS: the CSS design and template is the property of the original Author.
+PPS: Try didfferent colour schemes which are really interesting. Especially orange :)
